@@ -4,110 +4,257 @@ const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
 
-const perguntas = [
+const perguntasSustentabilidade = [
     {
-        enunciado: "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
+        enunciado: "Você está caminhando pelo parque e percebe que muitas pessoas jogam lixo no chão. Qual sua reação?",
         alternativas: [
             {
-                texto: "Isso é assustador!",
-                afirmacao: "No início ficou com medo do que essa tecnologia pode fazer. "
+                texto: "Ignoro, pois acho que não posso mudar o comportamento de todos.",
+                afirmacao: "Decidi não fazer nada, mesmo sabendo que isso prejudica o meio ambiente."
             },
             {
-                texto: "Isso é maravilhoso!",
-                afirmacao: "Quis saber como usar IA no seu dia a dia."
+                texto: "Peço gentilmente para as pessoas jogarem o lixo no local adequado.",
+                afirmacao: "Decidi agir para incentivar a conscientização ambiental."
             }
         ]
     },
     {
-        enunciado: "Com a descoberta desta tecnologia, chamada Inteligência Artificial, uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre esta tecnologia. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de IA em sala de aula. Qual atitude você toma?",
+        enunciado: "Sua escola está pensando em começar um projeto de coleta seletiva de lixo. Como você participa?",
         alternativas: [
             {
-                texto: "Utiliza uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento.",
-                afirmacao: "Conseguiu utilizar a IA para buscar informações úteis."
+                texto: "Participo ativamente, ajudando na separação e incentivo meus colegas a fazerem o mesmo.",
+                afirmacao: "Minha postura contribui para uma escola mais sustentável."
             },
             {
-                texto: "Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao: "Sentiu mais facilidade em utilizar seus próprios recursos para escrever seu trabalho."
+                texto: "Acho importante, mas não me esforço muito para ajudar.",
+                afirmacao: "Reconheço a importância, mas preciso me envolver mais."
             }
         ]
     },
     {
-        enunciado: "Após a elaboração do trabalho escrito, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
+        enunciado: "Você decide plantar uma árvore na sua comunidade. Como planeja fazer isso?",
         alternativas: [
             {
-                texto: "Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-                afirmacao: "Vem impulsionando a inovação na área de IA e luta para abrir novos caminhos profissionais com IA."
+                texto: "Procuro um espaço adequado, reúno amigos e começo a plantar a árvore com cuidado.",
+                afirmacao: "Acho que ações simples podem ter um grande impacto no meio ambiente."
             },
             {
-                texto: "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-                afirmacao: "Sua preocupação com as pessoas motivou a criar um grupo de estudos entre trabalhadores para discutir meios de utilização de IA de forma ética."
+                texto: "Deixo para os responsáveis, pois não sei como fazer corretamente.",
+                afirmacao: "Reconheço a importância, mas ainda tenho dúvidas sobre como contribuir efetivamente."
             }
         ]
     },
     {
-        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
+        enunciado: "Você está pensando em reduzir seu consumo de energia em casa. Qual ação você toma?",
         alternativas: [
             {
-                texto: "Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao: "Notou também que muitas pessoas não sabem ainda utilizar as ferramentas tradicionais e decidiu compartilhar seus conhecimentos de design utilizando ferramentas de pintura digital para iniciantes."
+                texto: "Desligo aparelhos eletrônicos que não estou usando e uso lâmpadas LED.",
+                afirmacao: "Ações pequenas ajudam a diminuir o impacto ambiental."
             },
             {
-                texto: "Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao: "Acelerou o processo de criação de trabalhos utilizando geradores de imagem e agora consegue ensinar pessoas que sentem dificuldades em desenhar manualmente como utilizar também!"
+                texto: "Não mudo meus hábitos, acho que minha contribuição é pequena demais.",
+                afirmacao: "Percebo que cada ação conta e posso fazer minha parte."
             }
         ]
     },
     {
-        enunciado: "Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda da IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz? ",
+        enunciado: "Na hora de ir para a escola ou trabalho, qual meio de transporte você costuma usar?",
         alternativas: [
             {
-                texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-                afirmacao: "Infelizmente passou a utilizar a IA para fazer todas suas tarefas e agora se sente dependente da IA para tudo."
+                texto: "Uso transporte público ou vou de bicicleta sempre que possível.",
+                afirmacao: "Procuro opções sustentáveis para reduzir minha pegada de carbono."
             },
             {
-                texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-                afirmacao: "Percebeu que toda IA reproduz orientações baseadas na empresa que programou e muito do que o chat escrevia não refletia o que pensava e por isso sabe que os textos gerados pela IA devem servir como auxílio e não resultado final. "
+                texto: "Prefiro usar carro particular mesmo que isso gere mais emissão de gases.",
+                afirmacao: "Reconheço que posso melhorar meus hábitos para ajudar o planeta."
             }
         ]
     },
 ];
 
+let atualSustentabilidade = 0;
+let historiaFinalSustentabilidade = "";
 
-let atual = 0;
-let perguntaAtual;
-let historiaFinal = "";
-
-function mostraPergunta() {
-    if (atual >= perguntas.length) {
-        mostraResultado();
+function mostraPerguntaSustentabilidade() {
+    if (atualSustentabilidade >= perguntasSustentabilidade.length) {
+        mostraResultadoSustentabilidade();
         return;
     }
-    perguntaAtual = perguntas[atual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
+    const perguntaAtualSustentabilidade = perguntasSustentabilidade[atualSustentabilidade];
+    caixaPerguntas.textContent = perguntaAtualSustentabilidade.enunciado;
     caixaAlternativas.textContent = "";
-    mostraAlternativas();
+    mostraAlternativasSustentabilidade(perguntaAtualSustentabilidade);
 }
 
-function mostraAlternativas(){
-    for(const alternativa of perguntaAtual.alternativas) {
-        const botaoAlternativas = document.createElement("button");
-        botaoAlternativas.textContent = alternativa.texto;
-        botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
-        caixaAlternativas.appendChild(botaoAlternativas);
+function mostraAlternativasSustentabilidade(pergunta) {
+    for (const alternativa of pergunta.alternativas) {
+        const botaoAlternativa = document.createElement("button");
+        botaoAlternativa.textContent = alternativa.texto;
+        botaoAlternativa.addEventListener("click", () => respostaSelecionadaSustentabilidade(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativa);
     }
 }
 
-function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + " ";
-    atual++;
-    mostraPergunta();
+function respostaSelecionadaSustentabilidade(opcaoSelecionada) {
+    const afirmacao = opcaoSelecionada.afirmacao;
+    historiaFinalSustentabilidade += afirmacao + " ";
+    atualSustentabilidade++;
+    mostraPerguntaSustentabilidade();
 }
 
-function mostraResultado() {
-    caixaPerguntas.textContent = "Em 2049...";
-    textoResultado.textContent = historiaFinal;
+function mostraResultadoSustentabilidade() {
+    // Esconder as caixas de perguntas e alternativas
+    caixaPerguntas.textContent = "Sobre suas atitudes ambientais...";
     caixaAlternativas.textContent = "";
+
+    // Exibir o resultado final
+    textoResultado.textContent = historiaFinalSustentabilidade;
+
+    // Opcional: Adicionar um botão para reiniciar o quiz
+    const botaoReiniciar = document.createElement("button");
+    botaoReiniciar.textContent = "Refazer o questionário";
+    botaoReiniciar.addEventListener("click", () => {
+        // Reiniciar variáveis
+        historiaFinalSustentabilidade = "";
+        atualSustentabilidade = 0;
+        // Opcional: limpar o conteúdo do resultado
+        textoResultado.textContent = "";
+        // Mostrar a primeira pergunta novamente
+        mostraPerguntaSustentabilidade();
+    });
+    // Adicionar o botão ao container de resultado
+    caixaResultado.appendChild(botaoReiniciar);
 }
 
-mostraPergunta();
+// Inicializar o quiz
+mostraPerguntaSustentabilidade();
+const caixaPrincipal = document.querySelector(".caixa-principal");
+const caixaPerguntas = document.querySelector(".caixa-perguntas");
+const caixaAlternativas = document.querySelector(".caixa-alternativas");
+const caixaResultado = document.querySelector(".caixa-resultado");
+const textoResultado = document.querySelector(".texto-resultado");
+
+const perguntasSustentabilidade = [
+    {
+        enunciado: "Você está caminhando pelo parque e percebe que muitas pessoas jogam lixo no chão. Qual sua reação?",
+        alternativas: [
+            {
+                texto: "Ignoro, pois acho que não posso mudar o comportamento de todos.",
+                afirmacao: "Decidi não fazer nada, mesmo sabendo que isso prejudica o meio ambiente."
+            },
+            {
+                texto: "Peço gentilmente para as pessoas jogarem o lixo no local adequado.",
+                afirmacao: "Decidi agir para incentivar a conscientização ambiental."
+            }
+        ]
+    },
+    {
+        enunciado: "Sua escola está pensando em começar um projeto de coleta seletiva de lixo. Como você participa?",
+        alternativas: [
+            {
+                texto: "Participo ativamente, ajudando na separação e incentivo meus colegas a fazerem o mesmo.",
+                afirmacao: "Minha postura contribui para uma escola mais sustentável."
+            },
+            {
+                texto: "Acho importante, mas não me esforço muito para ajudar.",
+                afirmacao: "Reconheço a importância, mas preciso me envolver mais."
+            }
+        ]
+    },
+    {
+        enunciado: "Você decide plantar uma árvore na sua comunidade. Como planeja fazer isso?",
+        alternativas: [
+            {
+                texto: "Procuro um espaço adequado, reúno amigos e começo a plantar a árvore com cuidado.",
+                afirmacao: "Acho que ações simples podem ter um grande impacto no meio ambiente."
+            },
+            {
+                texto: "Deixo para os responsáveis, pois não sei como fazer corretamente.",
+                afirmacao: "Reconheço a importância, mas ainda tenho dúvidas sobre como contribuir efetivamente."
+            }
+        ]
+    },
+    {
+        enunciado: "Você está pensando em reduzir seu consumo de energia em casa. Qual ação você toma?",
+        alternativas: [
+            {
+                texto: "Desligo aparelhos eletrônicos que não estou usando e uso lâmpadas LED.",
+                afirmacao: "Ações pequenas ajudam a diminuir o impacto ambiental."
+            },
+            {
+                texto: "Não mudo meus hábitos, acho que minha contribuição é pequena demais.",
+                afirmacao: "Percebo que cada ação conta e posso fazer minha parte."
+            }
+        ]
+    },
+    {
+        enunciado: "Na hora de ir para a escola ou trabalho, qual meio de transporte você costuma usar?",
+        alternativas: [
+            {
+                texto: "Uso transporte público ou vou de bicicleta sempre que possível.",
+                afirmacao: "Procuro opções sustentáveis para reduzir minha pegada de carbono."
+            },
+            {
+                texto: "Prefiro usar carro particular mesmo que isso gere mais emissão de gases.",
+                afirmacao: "Reconheço que posso melhorar meus hábitos para ajudar o planeta."
+            }
+        ]
+    },
+];
+
+let atualSustentabilidade = 0;
+let historiaFinalSustentabilidade = "";
+
+function mostraPerguntaSustentabilidade() {
+    if (atualSustentabilidade >= perguntasSustentabilidade.length) {
+        mostraResultadoSustentabilidade();
+        return;
+    }
+    const perguntaAtualSustentabilidade = perguntasSustentabilidade[atualSustentabilidade];
+    caixaPerguntas.textContent = perguntaAtualSustentabilidade.enunciado;
+    caixaAlternativas.textContent = "";
+    mostraAlternativasSustentabilidade(perguntaAtualSustentabilidade);
+}
+
+function mostraAlternativasSustentabilidade(pergunta) {
+    for (const alternativa of pergunta.alternativas) {
+        const botaoAlternativa = document.createElement("button");
+        botaoAlternativa.textContent = alternativa.texto;
+        botaoAlternativa.addEventListener("click", () => respostaSelecionadaSustentabilidade(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativa);
+    }
+}
+
+function respostaSelecionadaSustentabilidade(opcaoSelecionada) {
+    const afirmacao = opcaoSelecionada.afirmacao;
+    historiaFinalSustentabilidade += afirmacao + " ";
+    atualSustentabilidade++;
+    mostraPerguntaSustentabilidade();
+}
+
+function mostraResultadoSustentabilidade() {
+    // Esconder as caixas de perguntas e alternativas
+    caixaPerguntas.textContent = "Sobre suas atitudes ambientais...";
+    caixaAlternativas.textContent = "";
+
+    // Exibir o resultado final
+    textoResultado.textContent = historiaFinalSustentabilidade;
+
+    // Opcional: Adicionar um botão para reiniciar o quiz
+    const botaoReiniciar = document.createElement("button");
+    botaoReiniciar.textContent = "Refazer o questionário";
+    botaoReiniciar.addEventListener("click", () => {
+        // Reiniciar variáveis
+        historiaFinalSustentabilidade = "";
+        atualSustentabilidade = 0;
+        // Opcional: limpar o conteúdo do resultado
+        textoResultado.textContent = "";
+        // Mostrar a primeira pergunta novamente
+        mostraPerguntaSustentabilidade();
+    });
+    // Adicionar o botão ao container de resultado
+    caixaResultado.appendChild(botaoReiniciar);
+}
+
+// Inicializar o quiz
+mostraPerguntaSustentabilidade();
